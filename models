@@ -1,0 +1,33 @@
+import { Sequelize, DataTypes } from 'sequelize';
+
+const sequelize = new Sequelize('sqlite::memory:');
+const Book = sequelize.define('Book', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    author: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    isbn: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+    },
+    publication_year: {
+        type: DataTypes.INTEGER,
+    },
+    genre: {
+        type: DataTypes.STRING,
+    },
+}, {
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+});
