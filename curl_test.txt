@@ -1,0 +1,20 @@
+#Testing endpoint
+1/Retrive all books
+
+command: curl http://localhost:3000/api/books
+
+2/Add a new books
+
+command: curl -X POST http://localhost:3000/api/books -H "Content-Type: application/json" \-d '{"title":"Pikou's Adventure","author":"Mamadouce Dialoce","isbn":"ZER","publication_year":2090,"genre":"Fan-Fiction"}'
+
+3/Retrieve a book by id
+
+command: curl http://localhost:3000/api/books/1
+
+4/Update a book by id
+
+command: curl -X PUT http://localhost:3000/api/books/1 \-H "Content-Type: application/json" \-d '{"title":"The Great Life of Alkama","author":"Alkama","isbn":"baw","publication_year":2028,"genre":"bibliofraphy"}'
+
+5/Delete a book by id
+
+command: curl -X DELETE http://localhost:3000/api/books/1
